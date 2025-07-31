@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url("ool (1).jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.review-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  margin: 50px auto;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #0ff;
+}
+
+.review-container h2 {
+  text-align: center;
+  color: #0ff;
+  margin-bottom: 20px;
+}
+
+#reviewForm input,
+#reviewForm select,
+#reviewForm textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+#reviewForm button {
+  padding: 12px;
+  width: 100%;
+  background: #4b00ff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#reviewForm button:hover {
+  background: #0ff;
+  color: black;
+}
+
+.review {
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 5px solid #0ff;
+}
+
+
+body {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.back-home {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #0ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.back-home:hover {
+  color: white;
+  text-shadow: 0 0 5px #0ff;
+}
+
+
+.btn-review {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #0ff;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.btn-review:hover {
+  background: #4b00ff;
+  color: white;
+}

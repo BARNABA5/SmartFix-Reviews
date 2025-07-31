@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartFix Reviews</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="review-container">
+    <h1>Welcome to SmartFix Reviews</h1>
+    <p>💬 Share your experience with SmartFix Studio and help others make informed decisions!</p>
+    <form id="reviewForm">
+      <input type="text" id="name" placeholder="Your name" required />
+      <select id="rating">
+        <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+        <option value="4">⭐️⭐️⭐️⭐️</option>
+        <option value="3">⭐️⭐️⭐️</option>
+        <option value="2">⭐️⭐️</option>
+        <option value="1">⭐️</option>
+      </select>
+      <textarea id="comment" placeholder="Write your review..." required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+    <a href="index.html" class="back-home">← Back to Home</a>
+
+    <a href="review.html" class="btn-review">📣 View Reviews</a>
+
+
+    <div id="reviewsList"></div>
+  </div>
+
+
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
