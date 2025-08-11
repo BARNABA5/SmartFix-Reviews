@@ -1,34 +1,3 @@
-document.getElementById("reviewForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const rating = document.getElementById("rating").value;
-  const comment = document.getElementById("comment").value.trim();
-
-  if (!name || !comment) {
-    alert("THANKS FOR YOUR FEEDBACK.");
-    return;
-  }
-
-  const reviewHTML = `
-    <div class="review">
-      <strong>${name}</strong> – ${"⭐️".repeat(rating)}<br/>
-      <p>${comment}</p>
-    </div>
-  `;
-
-  document.getElementById("reviewsList").innerHTML += reviewHTML;
-
-  // 🔊 Voice output (optional)
-  const voice = `"${name} rated ${rating} stars and said: ${comment}"`;
-  const utterance = new SpeechSynthesisUtterance(voice);
-  utterance.lang = "en-US";
-  speechSynthesis.speak(utterance);
-
-  // Reset form
-  document.getElementById("reviewForm").reset();
-});
-
 // Load saved reviews on page load
 window.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("smartfix_reviews");
@@ -38,35 +7,37 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Listen for form submission
+// Handle form submission
 document.getElementById("reviewForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const name = document.getElementById("name").value.trim();
-  const rating = document.getElementById("rating").value;
+  const rating = parseInt(document.getElementById("rating").value);
   const comment = document.getElementById("comment").value.trim();
 
-  if (!name || !comment) {
+  if (!name || !comment || !rating) {
     alert("Please fill in all fields.");
     return;
   }
 
   const review = { name, rating, comment };
-  
+
   // Save to localStorage
   const stored = localStorage.getItem("smartfix_reviews");
   const allReviews = stored ? JSON.parse(stored) : [];
   allReviews.push(review);
   localStorage.setItem("smartfix_reviews", JSON.stringify(allReviews));
 
+  // Display review
   displayReview(review);
 
-  // 🔊 Voice
-  const voice = `"${name} rated ${rating} stars and said: ${comment}"`;
+  // 🔊 Voice output
+  const voice = `${name} rated ${rating} stars and said: ${comment}`;
   const utterance = new SpeechSynthesisUtterance(voice);
   utterance.lang = "en-US";
   speechSynthesis.speak(utterance);
 
+  // Reset form
   document.getElementById("reviewForm").reset();
 });
 
@@ -89,7 +60,6 @@ function displayReview(review) {
 
   document.getElementById("reviewsList").innerHTML += reviewHTML;
 
-  // Optional: Scroll to new review
+  // Scroll to the new review
   document.getElementById("reviewsList").scrollIntoView({ behavior: "smooth", block: "end" });
 }
-
