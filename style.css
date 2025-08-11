@@ -1,3 +1,4 @@
+/* Body with fixed background image and white text */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -6,6 +7,7 @@ body {
   color: white;
 }
 
+/* Main container for reviews */
 .review-container {
   background: rgba(0, 0, 0, 0.7);
   padding: 30px;
@@ -15,12 +17,14 @@ body {
   box-shadow: 0 0 15px #0ff;
 }
 
+/* Title inside the review container */
 .review-container h2 {
   text-align: center;
   color: #0ff;
   margin-bottom: 20px;
 }
 
+/* Inputs, selects, and textarea styling */
 #reviewForm input,
 #reviewForm select,
 #reviewForm textarea {
@@ -30,8 +34,13 @@ body {
   border-radius: 8px;
   border: none;
   font-size: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  box-sizing: border-box;
+  outline: none;
 }
 
+/* Submit button styling */
 #reviewForm button {
   padding: 12px;
   width: 100%;
@@ -42,6 +51,8 @@ body {
   border-radius: 8px;
   cursor: pointer;
   margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #reviewForm button:hover {
@@ -49,19 +60,23 @@ body {
   color: black;
 }
 
+/* Individual review boxes */
 .review {
   background: rgba(255, 255, 255, 0.1);
   margin-top: 20px;
   padding: 15px;
   border-radius: 10px;
   border-left: 5px solid #0ff;
+  color: white;
+  box-sizing: border-box;
 }
 
-
+/* Override body font to Orbitron */
 body {
   font-family: 'Orbitron', sans-serif;
 }
 
+/* Back home link */
 .back-home {
   display: inline-block;
   margin-bottom: 20px;
@@ -76,7 +91,7 @@ body {
   text-shadow: 0 0 5px #0ff;
 }
 
-
+/* Button style for review-related buttons */
 .btn-review {
   display: inline-block;
   padding: 10px 20px;
@@ -86,6 +101,7 @@ body {
   font-weight: bold;
   border-radius: 8px;
   margin-top: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-review:hover {
